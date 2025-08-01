@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public interface NbsPlayerAPI<S extends IBoomboxSong> {
+public interface NbsPlayerAPI {
 
     /**
      * Example:
@@ -34,10 +34,10 @@ public interface NbsPlayerAPI<S extends IBoomboxSong> {
     UUID getBoomboxInstanceUUID();
     NbsPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
     @Nullable
-    S getCurrentSong();
-    NbsPlayerAPI setCurrentSong(S boomboxSong);
-    NbsPlayerAPI setSongsToList(List<S> songsToPlay);
-    NbsPlayerAPI addSongToList(S boomboxSong);
+    IBoomboxSong getCurrentSong();
+    NbsPlayerAPI setCurrentSong(IBoomboxSong boomboxSong);
+    NbsPlayerAPI setSongsToList(List<IBoomboxSong> songsToPlay);
+    NbsPlayerAPI addSongToList(IBoomboxSong boomboxSong);
     NbsPlayerAPI removeSongFromList(String songID);
     NbsPlayerAPI setLocToPlay(Location locToPlay);
     NbsPlayerAPI setPlayerToPlay(Player playerToPlay);

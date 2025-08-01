@@ -30,7 +30,7 @@ public interface RecordsPlayerAPI {
     boolean isPlaying();
     @Nullable
     UUID getBoomboxInstanceUUID();
-    NbsPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
+    RecordsPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
     @Nullable
     ERecords getCurrentSong();
     RecordsPlayerAPI setCurrentSong(ERecords record);
