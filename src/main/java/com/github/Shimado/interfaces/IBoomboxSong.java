@@ -53,4 +53,10 @@ public interface IBoomboxSong {
     NbsSong getNbsSong();
     void setNbsSong(NbsSong nbsSong);
 
+    String getCustomOggSoundName();
+    void setCustomOggSoundName(String customOggSoundName);
+
+    int getCustomOggSoundLength();
+    void setCustomOggSoundLength(int customOggSoundLength);
+
 }

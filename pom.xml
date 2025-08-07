@@ -6,7 +6,7 @@
 
     <groupId>com.github.Shimado</groupId>
     <artifactId>BoomBoxAPI</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <name>BoomBoxAPI</name>
     <description>API for minecraft plugin BoomBox</description>
