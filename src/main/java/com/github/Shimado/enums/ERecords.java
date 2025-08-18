@@ -54,10 +54,8 @@ public enum ERecords {
     }
 
     public Material getMaterial(){
-        int var2 = materials.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            String material = materials[var3];
+        for(int i = 0; i < materials.length; ++i) {
+            String material = materials[i];
             if (Material.getMaterial(material) != null) {
                 return Material.getMaterial(material);
             }
