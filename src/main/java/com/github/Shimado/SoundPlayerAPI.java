@@ -34,7 +34,7 @@ public interface SoundPlayerAPI {
     @Nullable
     IBoomboxSong getCurrentSong();
     SoundPlayerAPI setCurrentSong(IBoomboxSong boomboxSong);
-    SoundPlayerAPI setSongsToList(List<? extends IBoomboxSong> songsToPlay);
+    SoundPlayerAPI setSongsToList(List<IBoomboxSong> songsToPlay);
     SoundPlayerAPI addSongToList(IBoomboxSong boomboxSong);
     SoundPlayerAPI removeSongFromList(String songID);
     SoundPlayerAPI setLocToPlay(Location locToPlay);

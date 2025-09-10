@@ -36,7 +36,7 @@ public interface NbsPlayerAPI {
     @Nullable
     IBoomboxSong getCurrentSong();
     NbsPlayerAPI setCurrentSong(IBoomboxSong boomboxSong);
-    NbsPlayerAPI setSongsToList(List<? extends IBoomboxSong> songsToPlay);
+    NbsPlayerAPI setSongsToList(List<IBoomboxSong> songsToPlay);
     NbsPlayerAPI addSongToList(IBoomboxSong boomboxSong);
     NbsPlayerAPI removeSongFromList(String songID);
     NbsPlayerAPI setLocToPlay(Location locToPlay);
