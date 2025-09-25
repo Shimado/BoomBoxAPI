@@ -39,7 +39,8 @@ public class NbsConverter {
             String author = getString(inputStream);                                        // Автор
             getString(inputStream);                                                        // Оригинальный автор
             String description = getString(inputStream);                                   // Описание
-            long speed = (long) Math.ceil(20.0 / (getShort(inputStream) / 100f));          // Скорость цикла
+            long speed = (long) Math.round(20.0 / (getShort(inputStream) / 100f));         // Скорость цикла
+            if(speed <= 0) speed = 1;
             inputStream.readBoolean();                                                     // Auto-saving
             inputStream.readByte();                                                        // Auto-saving duration
             inputStream.readByte();                                                        // Time signature
