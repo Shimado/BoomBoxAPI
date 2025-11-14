@@ -1,7 +1,6 @@
 package com.github.Shimado;
 
-import com.github.Shimado.interfaces.IBoomboxSong;
-import org.bukkit.Bukkit;
+import com.github.Shimado.interfaces.BoomboxSong;
 import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
@@ -34,10 +33,10 @@ public interface NbsPlayerAPI {
     UUID getBoomboxInstanceUUID();
     NbsPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
     @Nullable
-    IBoomboxSong getCurrentSong();
-    NbsPlayerAPI setCurrentSong(IBoomboxSong boomboxSong);
-    NbsPlayerAPI setSongsToList(List<IBoomboxSong> songsToPlay);
-    NbsPlayerAPI addSongToList(IBoomboxSong boomboxSong);
+    BoomboxSong getCurrentSong();
+    NbsPlayerAPI setCurrentSong(BoomboxSong boomboxSong);
+    NbsPlayerAPI setSongsToList(List<BoomboxSong> songsToPlay);
+    NbsPlayerAPI addSongToList(BoomboxSong boomboxSong);
     NbsPlayerAPI removeSongFromList(String songID);
     NbsPlayerAPI setLocToPlay(Location locToPlay);
     NbsPlayerAPI setPlayerToPlay(Player playerToPlay);

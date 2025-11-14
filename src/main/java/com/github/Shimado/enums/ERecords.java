@@ -4,10 +4,18 @@ import com.github.Shimado.utils.SoundUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+
+/**
+ * Enum representing all available music discs in the game with their associated properties.
+ * This enum provides a comprehensive mapping of music disc items to their material names,
+ * sound identifiers, durations, and other metadata across different Minecraft versions.
+ *
+ * Each record contains compatibility mappings for different server implementations
+ * and version naming conventions to ensure cross-version compatibility.
+ */
 
 public enum ERecords {
 
@@ -38,20 +46,41 @@ public enum ERecords {
     private String[] sounds;
     private int duration;
 
-    ERecords(int id, String[] materials, String[] sounds, int duration) {
+    ERecords(int id, @Nonnull String[] materials, @Nonnull String[] sounds, int duration) {
         this.id = id;
         this.materials = materials;
         this.sounds = sounds;
         this.duration = duration;
     }
 
+
+    /**
+     * Gets the unique identifier for this music disc.
+     *
+     * @return the music disc ID
+     */
+
     public int getID(){
         return id;
     }
 
+    /**
+     * Gets the duration of the music track in seconds.
+     *
+     * @return the duration in seconds
+     */
+
     public int getDuration(){
         return duration;
     }
+
+    /**
+     * Gets the material representation of this music disc.
+     * This method attempts to find a valid material by trying each material name
+     * in the materials array until a non-null material is found.
+     *
+     * @return the Material for this music disc, or Material.STONE if no valid material is found
+     */
 
     public Material getMaterial(){
         for(int i = 0; i < materials.length; ++i) {
@@ -64,15 +93,38 @@ public enum ERecords {
         return Material.STONE;
     }
 
+    /**
+     * Gets the sound associated with this music disc.
+     * Uses SoundUtil to find a valid sound from the sounds array.
+     *
+     * @return the Sound for this music disc
+     */
+
     public Sound getSound(){
         return SoundUtil.getSound(sounds);
     }
 
-    public static ERecords findByMaterial(Material material){
+    /**
+     * Finds a music disc record by its material.
+     *
+     * @param material the material to search for, cannot be null
+     * @return the matching ERecords instance, or null if no match is found
+     */
+
+    @Nullable
+    public static ERecords findByMaterial(@Nonnull Material material){
         return Arrays.stream(ERecords.values()).filter(e -> e.getMaterial().equals(material)).findFirst().orElse(null);
     }
 
-    public static ERecords findByName(String name){
+    /**
+     * Finds a music disc record by its enum name.
+     *
+     * @param name the enum name to search for (case-sensitive), cannot be null
+     * @return the matching ERecords instance, or null if no match is found
+     */
+
+    @Nullable
+    public static ERecords findByName(@Nonnull String name){
         return Arrays.stream(ERecords.values()).filter(e -> e.toString().equals(name)).findFirst().orElse(null);
     }
 
