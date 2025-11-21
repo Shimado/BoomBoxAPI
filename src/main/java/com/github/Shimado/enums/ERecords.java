@@ -128,4 +128,16 @@ public enum ERecords {
         return Arrays.stream(ERecords.values()).filter(e -> e.toString().equals(name)).findFirst().orElse(null);
     }
 
+    /**
+     * Finds a music disc record by its enum ID.
+     *
+     * @param id the enum id to search
+     * @return the matching ERecords instance, or null if no match is found
+     */
+
+    @Nullable
+    public static ERecords findByID(int id){
+        return Arrays.stream(ERecords.values()).filter(e -> e.getID() == id).findFirst().orElse(null);
+    }
+
 }

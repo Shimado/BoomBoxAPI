@@ -5,6 +5,7 @@ import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
@@ -31,15 +32,15 @@ public interface NbsPlayerAPI {
     boolean isPlaying();
     @Nullable
     UUID getBoomboxInstanceUUID();
-    NbsPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
+    NbsPlayerAPI setBoomboxInstanceUUID(@Nullable UUID boomboxInstanceUUID);
     @Nullable
     BoomboxSong getCurrentSong();
-    NbsPlayerAPI setCurrentSong(BoomboxSong boomboxSong);
-    NbsPlayerAPI setSongsToList(List<BoomboxSong> songsToPlay);
-    NbsPlayerAPI addSongToList(BoomboxSong boomboxSong);
-    NbsPlayerAPI removeSongFromList(String songID);
-    NbsPlayerAPI setLocToPlay(Location locToPlay);
-    NbsPlayerAPI setPlayerToPlay(Player playerToPlay);
+    NbsPlayerAPI setCurrentSong(@Nullable BoomboxSong boomboxSong);
+    NbsPlayerAPI setSongsToList(@Nonnull List<BoomboxSong> songsToPlay);
+    NbsPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
+    NbsPlayerAPI removeSongFromList(@Nonnull String songID);
+    NbsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+    NbsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
     NbsPlayerAPI removePlayerFromPlay();
     NbsPlayerAPI setAcceleration(int acceleration);
     NbsPlayerAPI setVolume(int volume);
@@ -49,7 +50,7 @@ public interface NbsPlayerAPI {
     NbsPlayerAPI enableAuditions(boolean isAuditions);
     @Nullable
     BossBar getBossBar();
-    NbsPlayerAPI setBossBar(BossBar bossBar);
+    NbsPlayerAPI setBossBar(@Nullable BossBar bossBar);
     boolean nextSong();
     boolean previousSong();
     void play();

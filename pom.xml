@@ -6,7 +6,7 @@
 
     <groupId>com.github.Shimado</groupId>
     <artifactId>BoomBoxAPI</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6</version>
 
     <name>BoomBoxAPI</name>
     <description>API for minecraft plugin BoomBox</description>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.9-R0.1-SNAPSHOT</version>
+            <version>1.21.10-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

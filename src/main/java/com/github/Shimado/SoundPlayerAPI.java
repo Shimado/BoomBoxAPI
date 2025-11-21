@@ -5,6 +5,7 @@ import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
@@ -29,15 +30,15 @@ public interface SoundPlayerAPI {
     boolean isPlaying();
     @Nullable
     UUID getBoomboxInstanceUUID();
-    SoundPlayerAPI setBoomboxInstanceUUID(UUID boomboxInstanceUUID);
+    SoundPlayerAPI setBoomboxInstanceUUID(@Nullable UUID boomboxInstanceUUID);
     @Nullable
     BoomboxSong getCurrentSong();
-    SoundPlayerAPI setCurrentSong(BoomboxSong boomboxSong);
-    SoundPlayerAPI setSongsToList(List<BoomboxSong> songsToPlay);
-    SoundPlayerAPI addSongToList(BoomboxSong boomboxSong);
-    SoundPlayerAPI removeSongFromList(String songID);
-    SoundPlayerAPI setLocToPlay(Location locToPlay);
-    SoundPlayerAPI setPlayerToPlay(Player playerToPlay);
+    SoundPlayerAPI setCurrentSong(@Nullable BoomboxSong boomboxSong);
+    SoundPlayerAPI setSongsToList(@Nonnull List<BoomboxSong> songsToPlay);
+    SoundPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
+    SoundPlayerAPI removeSongFromList(@Nonnull String songID);
+    SoundPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+    SoundPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
     SoundPlayerAPI removePlayerFromPlay();
     SoundPlayerAPI setAcceleration(int acceleration);
     SoundPlayerAPI setVolume(int volume);
@@ -47,7 +48,7 @@ public interface SoundPlayerAPI {
     SoundPlayerAPI enableAuditions(boolean isAuditions);
     @Nullable
     BossBar getBossBar();
-    SoundPlayerAPI setBossBar(BossBar bossBar);
+    SoundPlayerAPI setBossBar(@Nullable BossBar bossBar);
     boolean nextSong();
     boolean previousSong();
     void play();
