@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.UUID;
 
 public interface RecordsPlayerAPI {
@@ -34,7 +35,7 @@ public interface RecordsPlayerAPI {
     @Nullable
     ERecords getCurrentSong();
     RecordsPlayerAPI setCurrentSong(@Nullable ERecords record);
-    RecordsPlayerAPI setSongsToList(@Nonnull LinkedList<ERecords> recordsToPlay);
+    RecordsPlayerAPI setSongsToList(@Nonnull List<ERecords> recordsToPlay);
     RecordsPlayerAPI addSongToList(@Nonnull ERecords record);
     RecordsPlayerAPI removeSongFromList(int recordID);
     RecordsPlayerAPI setLocToPlay(@Nullable Location locToPlay);

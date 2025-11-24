@@ -3,6 +3,7 @@ package com.github.Shimado.interfaces;
 import com.github.Shimado.nbs.NbsSong;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -40,6 +41,7 @@ public interface BoomboxSong {
      * @return the filename
      */
 
+    @Nullable
     String getFilename();
 
     /**
@@ -48,7 +50,7 @@ public interface BoomboxSong {
      * @param filename the new filename
      */
 
-    void setFilename(String filename);
+    void setFilename(@Nullable String filename);
 
     /**
      * Gets the material used to represent this song when it hasn't been purchased.
@@ -56,6 +58,7 @@ public interface BoomboxSong {
      * @return the material name for unpurchased state
      */
 
+    @Nullable
     String getMaterialUnPurchased();
 
     /**
@@ -64,7 +67,7 @@ public interface BoomboxSong {
      * @param materialUnPurchased the material name for unpurchased state
      */
 
-    void setMaterialUnPurchased(String materialUnPurchased);
+    void setMaterialUnPurchased(@Nullable String materialUnPurchased);
 
     /**
      * Gets the custom model data for the unpurchased song item.
@@ -89,6 +92,7 @@ public interface BoomboxSong {
      * @return the material name for purchased state
      */
 
+    @Nullable
     String getMaterialPurchased();
 
     /**
@@ -97,7 +101,7 @@ public interface BoomboxSong {
      * @param materialPurchased the material name for purchased state
      */
 
-    void setMaterialPurchased(String materialPurchased);
+    void setMaterialPurchased(@Nullable String materialPurchased);
 
     /**
      * Gets the custom model data for the purchased song item.
@@ -122,6 +126,7 @@ public interface BoomboxSong {
      * @return the material name for playlist display
      */
 
+    @Nullable
     String getMaterialPlaylist();
 
     /**
@@ -130,7 +135,7 @@ public interface BoomboxSong {
      * @param materialPlaylist the material name for playlist display
      */
 
-    void setMaterialPlaylist(String materialPlaylist);
+    void setMaterialPlaylist(@Nullable String materialPlaylist);
 
     /**
      * Gets the custom model data for the playlist song item.
@@ -155,6 +160,7 @@ public interface BoomboxSong {
      * @return the song name
      */
 
+    @Nullable
     String getName();
 
     /**
@@ -163,7 +169,7 @@ public interface BoomboxSong {
      * @param name the new song name
      */
 
-    void setName(String name);
+    void setName(@Nullable String name);
 
     /**
      * Gets the description of this song.
@@ -172,6 +178,7 @@ public interface BoomboxSong {
      * @return the song description as a list of strings
      */
 
+    @Nonnull
     List<String> getDescription();
 
     /**
@@ -180,7 +187,7 @@ public interface BoomboxSong {
      * @param description the new song description as a list of strings
      */
 
-    void setDescription(List<String> description);
+    void setDescription(@Nonnull List<String> description);
 
     /**
      * Gets the purchase price of this song.
@@ -199,20 +206,21 @@ public interface BoomboxSong {
     void setPrice(double price);
 
     /**
-     * Sets the permission required to access this song.
-     *
-     * @param permission the permission node
-     */
-
-    void setPermission(String permission);
-
-    /**
      * Gets the permission required to access this song.
      *
      * @return the permission node
      */
 
+    @Nullable
     String getPermission();
+
+    /**
+     * Sets the permission required to access this song.
+     *
+     * @param permission the permission node
+     */
+
+    void setPermission(@Nullable String permission);
 
     /**
      * Gets the number of times this song has been owned/purchased.
@@ -267,6 +275,7 @@ public interface BoomboxSong {
      * @return the NBS song data, or null if not an NBS-based song
      */
 
+    @Nullable
     NbsSong getNbsSong();
 
     /**
@@ -275,7 +284,7 @@ public interface BoomboxSong {
      * @param nbsSong the NBS song data
      */
 
-    void setNbsSong(NbsSong nbsSong);
+    void setNbsSong(@Nullable NbsSong nbsSong);
 
     /**
      * Gets the custom OGG sound name for this boombox song.
@@ -284,6 +293,7 @@ public interface BoomboxSong {
      * @return the custom OGG sound name, or null if not an OGG-based song
      */
 
+    @Nullable
     String getCustomOggSoundName();
 
     /**
@@ -292,7 +302,7 @@ public interface BoomboxSong {
      * @param customOggSoundName the custom OGG sound name
      */
 
-    void setCustomOggSoundName(String customOggSoundName);
+    void setCustomOggSoundName(@Nullable String customOggSoundName);
 
     /**
      * Gets the length of the custom OGG sound in seconds.
