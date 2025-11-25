@@ -40,6 +40,8 @@ public interface NbsPlayerAPI {
     NbsPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
     NbsPlayerAPI removeSongFromList(@Nonnull String songID);
     NbsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+    @Nullable
+    Player getPlayerToPlay();
     NbsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
     NbsPlayerAPI removePlayerFromPlay();
     NbsPlayerAPI setAcceleration(int acceleration);

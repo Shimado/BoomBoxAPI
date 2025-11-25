@@ -38,8 +38,9 @@ public interface SoundPlayerAPI {
     SoundPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
     SoundPlayerAPI removeSongFromList(@Nonnull String songID);
     SoundPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+    @Nullable
+    Player getPlayerToPlay();
     SoundPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
-    SoundPlayerAPI removePlayerFromPlay();
     SoundPlayerAPI setAcceleration(int acceleration);
     SoundPlayerAPI setVolume(int volume);
     boolean isAutoPlay();

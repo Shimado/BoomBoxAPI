@@ -39,8 +39,9 @@ public interface RecordsPlayerAPI {
     RecordsPlayerAPI addSongToList(@Nonnull ERecords record);
     RecordsPlayerAPI removeSongFromList(int recordID);
     RecordsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+    @Nullable
+    Player getPlayerToPlay();
     RecordsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
-    RecordsPlayerAPI removePlayerFromPlay();
     RecordsPlayerAPI setAcceleration(int acceleration);
     RecordsPlayerAPI setVolume(int volume);
     @Nullable
