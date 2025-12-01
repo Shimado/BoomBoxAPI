@@ -85,7 +85,7 @@ public class SoundUtil {
 
             for(int var5 = 0; var5 < var4; ++var5) {
                 String s = var3[var5];
-                if (sound.toString().equals(s)) {
+                if (sound.toString().equals(s) || (sound instanceof Sound && ((Sound) sound).getKey().getKey().equalsIgnoreCase(s))) {
                     return (Sound)sound;
                 }
             }
