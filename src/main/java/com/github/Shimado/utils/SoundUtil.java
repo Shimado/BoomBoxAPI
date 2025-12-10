@@ -1,8 +1,8 @@
 package com.github.Shimado.utils;
 
 import org.bukkit.Sound;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -74,8 +74,8 @@ public class SoundUtil {
      * @throws NullPointerException if the sounds array is null
      */
 
-    @Nonnull
-    public static Sound getSound(@Nonnull String... sounds) {
+    @NotNull
+    public static Sound getSound(@NotNull String... sounds) {
         Iterator var1 = SOUNDS.iterator();
 
         while(var1.hasNext()) {

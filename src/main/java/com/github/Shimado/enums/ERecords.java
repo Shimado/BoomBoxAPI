@@ -3,9 +3,9 @@ package com.github.Shimado.enums;
 import com.github.Shimado.utils.SoundUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.Arrays;
 
 /**
@@ -46,7 +46,7 @@ public enum ERecords {
     private String[] sounds;
     private int duration;
 
-    ERecords(int id, @Nonnull String[] materials, @Nonnull String[] sounds, int duration) {
+    ERecords(int id, @NotNull String[] materials, @NotNull String[] sounds, int duration) {
         this.id = id;
         this.materials = materials;
         this.sounds = sounds;
@@ -112,7 +112,7 @@ public enum ERecords {
      */
 
     @Nullable
-    public static ERecords findByMaterial(@Nonnull Material material){
+    public static ERecords findByMaterial(@NotNull Material material){
         return Arrays.stream(ERecords.values()).filter(e -> e.getMaterial().equals(material)).findFirst().orElse(null);
     }
 
@@ -124,7 +124,7 @@ public enum ERecords {
      */
 
     @Nullable
-    public static ERecords findByName(@Nonnull String name){
+    public static ERecords findByName(@NotNull String name){
         return Arrays.stream(ERecords.values()).filter(e -> e.toString().equals(name)).findFirst().orElse(null);
     }
 

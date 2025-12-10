@@ -1,8 +1,7 @@
 package com.github.Shimado.nbs;
 
 import org.bukkit.Sound;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a musical note with timing and audio properties.
@@ -19,7 +18,7 @@ public class Note {
     private float pitch;
     private float volume;
 
-    public Note(int tick, @Nonnull Sound sound, float pitch, float volume) {
+    public Note(int tick, @NotNull Sound sound, float pitch, float volume) {
         this.tick = tick;
         this.sound = sound;
         this.pitch = pitch;
@@ -45,7 +44,7 @@ public class Note {
      * @return the Sound associated with this note, never null
      */
 
-    @Nonnull
+    @NotNull
     public Sound getSound(){
         return sound;
     }

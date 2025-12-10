@@ -1,9 +1,9 @@
 package com.github.Shimado.interfaces;
 
 import com.github.Shimado.nbs.NbsSong;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -23,7 +23,7 @@ public interface BoomboxSong {
      * @return the song ID
      */
 
-    @Nonnull
+    @NotNull
     String getID();
 
     /**
@@ -32,7 +32,7 @@ public interface BoomboxSong {
      * @param id the new song ID
      */
 
-    void setID(@Nonnull String id);
+    void setID(@NotNull String id);
 
     /**
      * Gets the filename associated with this song.
@@ -178,7 +178,7 @@ public interface BoomboxSong {
      * @return the song description as a list of strings
      */
 
-    @Nonnull
+    @NotNull
     List<String> getDescription();
 
     /**
@@ -187,7 +187,7 @@ public interface BoomboxSong {
      * @param description the new song description as a list of strings
      */
 
-    void setDescription(@Nonnull List<String> description);
+    void setDescription(@NotNull List<String> description);
 
     /**
      * Gets the purchase price of this song.

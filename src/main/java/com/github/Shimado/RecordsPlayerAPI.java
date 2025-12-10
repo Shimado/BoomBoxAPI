@@ -4,10 +4,9 @@ import com.github.Shimado.enums.ERecords;
 import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,8 +34,8 @@ public interface RecordsPlayerAPI {
     @Nullable
     ERecords getCurrentSong();
     RecordsPlayerAPI setCurrentSong(@Nullable ERecords record);
-    RecordsPlayerAPI setSongsToList(@Nonnull List<ERecords> recordsToPlay);
-    RecordsPlayerAPI addSongToList(@Nonnull ERecords record);
+    RecordsPlayerAPI setSongsToList(@NotNull List<ERecords> recordsToPlay);
+    RecordsPlayerAPI addSongToList(@NotNull ERecords record);
     RecordsPlayerAPI removeSongFromList(int recordID);
     RecordsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
     @Nullable

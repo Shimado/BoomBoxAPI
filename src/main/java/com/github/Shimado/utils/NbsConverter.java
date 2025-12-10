@@ -3,8 +3,8 @@ package com.github.Shimado.utils;
 import com.github.Shimado.nbs.NbsSong;
 import com.github.Shimado.nbs.Note;
 import org.bukkit.Sound;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -65,7 +65,7 @@ public class NbsConverter {
      *                         exception wrapped as the cause
      */
 
-    public static NbsSong parse(@Nonnull File file, boolean isLegacy) {
+    public static NbsSong parse(@NotNull File file, boolean isLegacy) {
         try (DataInputStream inputStream = new DataInputStream(new FileInputStream(file))){
 
             short length = getShort(inputStream);
@@ -178,7 +178,7 @@ public class NbsConverter {
      * @throws Exception if an I/O error occurs
      */
 
-    private static short getShort(@Nonnull DataInputStream inputStream) throws Exception {
+    private static short getShort(@NotNull DataInputStream inputStream) throws Exception {
         int byte1 = inputStream.readUnsignedByte();
         int byte2 = inputStream.readUnsignedByte();
         return (short) (byte1 + (byte2 << 8));
@@ -192,7 +192,7 @@ public class NbsConverter {
      * @throws Exception if an I/O error occurs
      */
 
-    private static int getInt(@Nonnull DataInputStream inputStream) throws Exception {
+    private static int getInt(@NotNull DataInputStream inputStream) throws Exception {
         int byte1 = inputStream.readUnsignedByte();
         int byte2 = inputStream.readUnsignedByte();
         int byte3 = inputStream.readUnsignedByte();
@@ -210,7 +210,7 @@ public class NbsConverter {
      * @throws Exception if an I/O error occurs
      */
 
-    private static String getString(@Nonnull DataInputStream inputStream) throws Exception {
+    private static String getString(@NotNull DataInputStream inputStream) throws Exception {
         int length = getInt(inputStream);
         StringBuilder builder = new StringBuilder(length);
         for (; length > 0; --length) {

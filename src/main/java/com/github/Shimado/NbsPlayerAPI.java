@@ -4,9 +4,9 @@ import com.github.Shimado.interfaces.BoomboxSong;
 import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,9 +36,9 @@ public interface NbsPlayerAPI {
     @Nullable
     BoomboxSong getCurrentSong();
     NbsPlayerAPI setCurrentSong(@Nullable BoomboxSong boomboxSong);
-    NbsPlayerAPI setSongsToList(@Nonnull List<BoomboxSong> songsToPlay);
-    NbsPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
-    NbsPlayerAPI removeSongFromList(@Nonnull String songID);
+    NbsPlayerAPI setSongsToList(@NotNull List<BoomboxSong> songsToPlay);
+    NbsPlayerAPI addSongToList(@NotNull BoomboxSong boomboxSong);
+    NbsPlayerAPI removeSongFromList(@NotNull String songID);
     NbsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
     @Nullable
     Player getPlayerToPlay();

@@ -4,9 +4,9 @@ import com.github.Shimado.interfaces.BoomboxSong;
 import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
@@ -34,9 +34,9 @@ public interface SoundPlayerAPI {
     @Nullable
     BoomboxSong getCurrentSong();
     SoundPlayerAPI setCurrentSong(@Nullable BoomboxSong boomboxSong);
-    SoundPlayerAPI setSongsToList(@Nonnull List<BoomboxSong> songsToPlay);
-    SoundPlayerAPI addSongToList(@Nonnull BoomboxSong boomboxSong);
-    SoundPlayerAPI removeSongFromList(@Nonnull String songID);
+    SoundPlayerAPI setSongsToList(@NotNull List<BoomboxSong> songsToPlay);
+    SoundPlayerAPI addSongToList(@NotNull BoomboxSong boomboxSong);
+    SoundPlayerAPI removeSongFromList(@NotNull String songID);
     SoundPlayerAPI setLocToPlay(@Nullable Location locToPlay);
     @Nullable
     Player getPlayerToPlay();
