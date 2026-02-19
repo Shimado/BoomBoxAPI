@@ -5,10 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A utility class for working with Minecraft sounds, providing sound resolution
@@ -21,25 +19,18 @@ import java.util.stream.Collectors;
 
 public class SoundUtil {
 
-    /**
-     * A cached list of all available Sound enum values.
-     * This list is populated once at class initialization using reflection to access
-     * all public static fields of the Sound enum.
-     */
+    private static final Map<String, Sound> SOUND_MAP = new HashMap<>();
 
-    private static final List<Sound> SOUNDS = Arrays.stream(Sound.class.getDeclaredFields())
-            .filter(field -> Modifier.isPublic(field.getModifiers()))
-            .map(field -> {
-                try {
-                    return (Sound) field.get(null);
-                } catch (IllegalAccessException e) {
-                    return null;
-                }
-            })
-            .filter(Objects::nonNull)
-            .collect(Collectors.toList());
-
-    public SoundUtil() {
+    static {
+        Arrays.stream(Sound.class.getDeclaredFields())
+                .filter(field -> Modifier.isPublic(field.getModifiers()))
+                .forEach(field -> {
+                    try {
+                        Object sound = field.get(null);
+                        if(sound != null) SOUND_MAP.put(field.getName(), (Sound) sound);
+                    } catch (IllegalAccessException e) {
+                    }
+                });
     }
 
     /**
@@ -76,21 +67,12 @@ public class SoundUtil {
 
     @NotNull
     public static Sound getSound(@NotNull String... sounds) {
-        Iterator var1 = SOUNDS.iterator();
-
-        while(var1.hasNext()) {
-            Object sound = var1.next();
-            String[] var3 = sounds;
-            int var4 = sounds.length;
-
-            for(int var5 = 0; var5 < var4; ++var5) {
-                String s = var3[var5];
-                if (sound.toString().equals(s)) {  //(sound instanceof Sound && ((Sound) sound).getKey().getKey().equalsIgnoreCase(s))
-                    return (Sound) sound;
-                }
+        for (String soundName : sounds) {
+            Sound sound = SOUND_MAP.get(soundName);
+            if (sound != null) {
+                return sound;
             }
         }
-
         return Sound.UI_TOAST_IN;
     }
 
