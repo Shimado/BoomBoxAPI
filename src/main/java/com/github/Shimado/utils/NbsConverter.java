@@ -248,6 +248,7 @@ public class NbsConverter {
      * @return the corresponding Minecraft Sound
      */
 
+    @NotNull
     private static Sound getSoundFromInstrument(byte instrument, boolean isLegacy) {
         switch (instrument) {
             case 0:  return SoundUtil.getSound("BLOCK.NOTE_BLOCK.HARP", "BLOCK_NOTE_BLOCK_HARP", "BLOCK_NOTE_HARP");

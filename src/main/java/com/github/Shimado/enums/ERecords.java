@@ -64,6 +64,7 @@ public enum ERecords {
         return id;
     }
 
+
     /**
      * Gets the duration of the music track in seconds.
      *
@@ -74,6 +75,7 @@ public enum ERecords {
         return duration;
     }
 
+
     /**
      * Gets the material representation of this music disc.
      * This method attempts to find a valid material by trying each material name
@@ -82,6 +84,7 @@ public enum ERecords {
      * @return the Material for this music disc, or Material.STONE if no valid material is found
      */
 
+    @NotNull
     public Material getMaterial(){
         for(int i = 0; i < materials.length; ++i) {
             String material = materials[i];
@@ -93,40 +96,47 @@ public enum ERecords {
         return Material.STONE;
     }
 
+
     /**
      * Gets the sound associated with this music disc.
      * Uses SoundUtil to find a valid sound from the sounds array.
      *
-     * @return the Sound for this music disc
+     * @return the Sound for this music disc, or Sound.UI_TOAST_IN if no valid sound is found
      */
 
+    @NotNull
     public Sound getSound(){
         return SoundUtil.getSound(sounds);
     }
 
+
     /**
      * Finds a music disc record by its material.
      *
-     * @param material the material to search for, cannot be null
+     * @param material the material to search for, can be null
      * @return the matching ERecords instance, or null if no match is found
      */
 
     @Nullable
-    public static ERecords findByMaterial(@NotNull Material material){
+    public static ERecords findByMaterial(@Nullable Material material){
+        if(material == null) return null;
         return Arrays.stream(ERecords.values()).filter(e -> e.getMaterial().equals(material)).findFirst().orElse(null);
     }
+
 
     /**
      * Finds a music disc record by its enum name.
      *
-     * @param name the enum name to search for (case-sensitive), cannot be null
+     * @param name the enum name to search for (case-sensitive), can be null
      * @return the matching ERecords instance, or null if no match is found
      */
 
     @Nullable
-    public static ERecords findByName(@NotNull String name){
+    public static ERecords findByName(@Nullable String name){
+        if(name == null) return null;
         return Arrays.stream(ERecords.values()).filter(e -> e.toString().equals(name)).findFirst().orElse(null);
     }
+
 
     /**
      * Finds a music disc record by its enum ID.

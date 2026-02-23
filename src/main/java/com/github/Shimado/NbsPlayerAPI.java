@@ -15,7 +15,6 @@ public interface NbsPlayerAPI {
     /**
      * Example:
      * NbsPlayerAPI nbsPlayer = new NbsPlayerImpl(plugin)
-     *                 .setBoomboxInstance(this)
      *                 .setVolume(volume)
      *                 .setAcceleration(acceleration)
      *                 .enableAuditions(true)
@@ -28,35 +27,61 @@ public interface NbsPlayerAPI {
      * **/
 
     int getFullTimeInSeconds();
+
     int getTimeInSeconds();
+
     boolean isPlaying();
+
     @Nullable
     UUID getBoomboxInstanceUUID();
+
     NbsPlayerAPI setBoomboxInstanceUUID(@Nullable UUID boomboxInstanceUUID);
+
     @Nullable
     BoomboxSong getCurrentSong();
+
     NbsPlayerAPI setCurrentSong(@Nullable BoomboxSong boomboxSong);
+
     NbsPlayerAPI setSongsToList(@NotNull List<BoomboxSong> songsToPlay);
+
     NbsPlayerAPI addSongToList(@NotNull BoomboxSong boomboxSong);
+
     NbsPlayerAPI removeSongFromList(@NotNull String songID);
+
     NbsPlayerAPI setLocToPlay(@Nullable Location locToPlay);
+
     @Nullable
     Player getPlayerToPlay();
+
     NbsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
+
     NbsPlayerAPI removePlayerFromPlay();
+
     NbsPlayerAPI setAcceleration(int acceleration);
+
     NbsPlayerAPI setVolume(int volume);
+
     boolean isAutoPlay();
+
     NbsPlayerAPI enableAutoPlay(boolean isAutoPlay);
+
     boolean isAuditions();
+
     NbsPlayerAPI enableAuditions(boolean isAuditions);
+
     @Nullable
     BossBar getBossBar();
+
     NbsPlayerAPI setBossBar(@Nullable BossBar bossBar);
+
     boolean nextSong();
+
     boolean previousSong();
+
     void play();
+
     void stop();
+
     void stopAndClear();
 
 }

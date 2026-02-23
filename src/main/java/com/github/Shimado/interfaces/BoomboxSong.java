@@ -26,13 +26,6 @@ public interface BoomboxSong {
     @NotNull
     String getID();
 
-    /**
-     * Sets the unique identifier for this song.
-     *
-     * @param id the new song ID
-     */
-
-    void setID(@NotNull String id);
 
     /**
      * Gets the filename associated with this song.
@@ -44,13 +37,6 @@ public interface BoomboxSong {
     @Nullable
     String getFilename();
 
-    /**
-     * Sets the NBS filename associated with this song.
-     *
-     * @param filename the new filename
-     */
-
-    void setFilename(@Nullable String filename);
 
     /**
      * Gets the material used to represent this song when it hasn't been purchased.
@@ -62,14 +48,6 @@ public interface BoomboxSong {
     String getMaterialUnPurchased();
 
     /**
-     * Sets the material used to represent this song when it hasn't been purchased.
-     *
-     * @param materialUnPurchased the material name for unpurchased state
-     */
-
-    void setMaterialUnPurchased(@Nullable String materialUnPurchased);
-
-    /**
      * Gets the custom model data for the unpurchased song item.
      * Used for custom texture differentiation.
      *
@@ -78,13 +56,6 @@ public interface BoomboxSong {
 
     int getCustomModelDataUnPurchased();
 
-    /**
-     * Sets the custom model data for the unpurchased song item.
-     *
-     * @param customModelDataUnPurchased the custom model data value for unpurchased state
-     */
-
-    void setCustomModelDataUnPurchased(int customModelDataUnPurchased);
 
     /**
      * Gets the material used to represent this song when it has been purchased.
@@ -96,14 +67,6 @@ public interface BoomboxSong {
     String getMaterialPurchased();
 
     /**
-     * Sets the material used to represent this song when it has been purchased.
-     *
-     * @param materialPurchased the material name for purchased state
-     */
-
-    void setMaterialPurchased(@Nullable String materialPurchased);
-
-    /**
      * Gets the custom model data for the purchased song item.
      * Used for custom texture differentiation.
      *
@@ -112,13 +75,6 @@ public interface BoomboxSong {
 
     int getCustomModelDataPurchased();
 
-    /**
-     * Sets the custom model data for the purchased song item.
-     *
-     * @param customModelDataPurchased the custom model data value for purchased state
-     */
-
-    void setCustomModelDataPurchased(int customModelDataPurchased);
 
     /**
      * Gets the material used when this song appears in a playlist.
@@ -130,14 +86,6 @@ public interface BoomboxSong {
     String getMaterialPlaylist();
 
     /**
-     * Sets the material used when this song appears in a playlist.
-     *
-     * @param materialPlaylist the material name for playlist display
-     */
-
-    void setMaterialPlaylist(@Nullable String materialPlaylist);
-
-    /**
      * Gets the custom model data for the playlist song item.
      * Used for custom texture differentiation in playlists.
      *
@@ -146,13 +94,6 @@ public interface BoomboxSong {
 
     int getCustomModelDataPlaylist();
 
-    /**
-     * Sets the custom model data for the playlist song item.
-     *
-     * @param customModelDataPlaylist the custom model data value for playlist display
-     */
-
-    void setCustomModelDataPlaylist(int customModelDataPlaylist);
 
     /**
      * Gets the display name of this song.
@@ -163,13 +104,6 @@ public interface BoomboxSong {
     @Nullable
     String getName();
 
-    /**
-     * Sets the display name of this song.
-     *
-     * @param name the new song name
-     */
-
-    void setName(@Nullable String name);
 
     /**
      * Gets the description of this song.
@@ -181,13 +115,6 @@ public interface BoomboxSong {
     @NotNull
     List<String> getDescription();
 
-    /**
-     * Sets the description of this song.
-     *
-     * @param description the new song description as a list of strings
-     */
-
-    void setDescription(@NotNull List<String> description);
 
     /**
      * Gets the purchase price of this song.
@@ -197,13 +124,6 @@ public interface BoomboxSong {
 
     double getPrice();
 
-    /**
-     * Sets the purchase price of this song.
-     *
-     * @param price the new price in the game's currency
-     */
-
-    void setPrice(double price);
 
     /**
      * Gets the permission required to access this song.
@@ -214,13 +134,6 @@ public interface BoomboxSong {
     @Nullable
     String getPermission();
 
-    /**
-     * Sets the permission required to access this song.
-     *
-     * @param permission the permission node
-     */
-
-    void setPermission(@Nullable String permission);
 
     /**
      * Gets the number of times this song has been owned/purchased.
@@ -245,6 +158,7 @@ public interface BoomboxSong {
 
     void setOwn(int own);
 
+
     /**
      * Gets the number of times this song has been played/listened to.
      *
@@ -268,6 +182,7 @@ public interface BoomboxSong {
 
     void setAuditions(int auditions);
 
+
     /**
      * Gets the NBS song data for this boombox song.
      * Returns null if this song uses custom OGG audio instead.
@@ -286,6 +201,7 @@ public interface BoomboxSong {
 
     void setNbsSong(@Nullable NbsSong nbsSong);
 
+
     /**
      * Gets the custom OGG sound name for this boombox song.
      * Returns null if this song uses NBS format instead.
@@ -296,13 +212,6 @@ public interface BoomboxSong {
     @Nullable
     String getCustomOggSoundName();
 
-    /**
-     * Sets the custom OGG sound name for this boombox song.
-     *
-     * @param customOggSoundName the custom OGG sound name
-     */
-
-    void setCustomOggSoundName(@Nullable String customOggSoundName);
 
     /**
      * Gets the length of the custom OGG sound in seconds.
@@ -312,12 +221,5 @@ public interface BoomboxSong {
 
     int getCustomOggSoundLength();
 
-    /**
-     * Sets the length of the custom OGG sound in seconds.
-     *
-     * @param customOggSoundLength the custom OGG sound length
-     */
-
-    void setCustomOggSoundLength(int customOggSoundLength);
 
 }

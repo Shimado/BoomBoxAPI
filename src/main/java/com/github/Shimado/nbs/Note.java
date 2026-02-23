@@ -38,6 +38,7 @@ public class Note {
         return tick;
     }
 
+
     /**
      * Gets the sound that this note will play.
      *
@@ -49,6 +50,7 @@ public class Note {
         return sound;
     }
 
+
     /**
      * Gets the pitch of this note.
      *
@@ -58,6 +60,7 @@ public class Note {
     public float getPitch(){
         return pitch;
     }
+
 
     /**
      * Gets the volume of this note.
@@ -69,6 +72,7 @@ public class Note {
     public float getVolume(){
         return volume;
     }
+
 
     /**
      * Sets the volume of this note.

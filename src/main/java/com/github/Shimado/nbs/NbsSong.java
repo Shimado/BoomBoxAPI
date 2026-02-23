@@ -15,7 +15,7 @@ public class NbsSong {
 
     private short length;
     private long speed;
-    private HashMap<Integer, List<Note>> notes = new HashMap<>();
+    private HashMap<Integer, List<Note>> notes;
 
     public NbsSong(short length, long speed, @NotNull HashMap<Integer, List<Note>> notes){
         this.length = length;
