@@ -42,7 +42,7 @@ public interface ERecords {
      * This method attempts to find a valid material by trying each material name
      * in the materials array until a non-null material is found.
      *
-     * @return the Material for this music disc, or Material.STONE if no valid material is found
+     * @return the Material for this music disc, or Material.APPLE if no valid material is found
      */
 
     @NotNull
