@@ -3,6 +3,9 @@ package com.github.Shimado.boomboxapi.enums;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
 
 /**
  * Enum representing all available music discs in the game with their associated properties.
@@ -56,5 +59,31 @@ public interface ERecords {
 
     @NotNull
     Sound getSound();
+
+
+    static <T extends Enum<T> & ERecords> T findByMaterial(Class<T> enumClass, @Nullable Material material) {
+        if(material == null) return null;
+        return Arrays.stream(enumClass.getEnumConstants())
+                .filter(e -> e.getMaterial().equals(material))
+                .findFirst()
+                .orElse(null);
+    }
+
+
+    static <T extends Enum<T> & ERecords> T findByName(Class<T> enumClass, @Nullable String name) {
+        if(name == null) return null;
+        return Arrays.stream(enumClass.getEnumConstants())
+                .filter(e -> e.toString().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+
+    static <T extends Enum<T> & ERecords> T findByID(Class<T> enumClass, int id) {
+        return Arrays.stream(enumClass.getEnumConstants())
+                .filter(e -> e.getID() == id)
+                .findFirst()
+                .orElse(null);
+    }
 
 }
