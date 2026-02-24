@@ -65,7 +65,7 @@ public class NbsConverter {
      *                         exception wrapped as the cause
      */
 
-    public static NbsSong parse(@NotNull File file, boolean isLegacy) {
+    public NbsSong parse(@NotNull File file, boolean isLegacy) {
         try (DataInputStream inputStream = new DataInputStream(new FileInputStream(file))){
 
             short length = getShort(inputStream);
