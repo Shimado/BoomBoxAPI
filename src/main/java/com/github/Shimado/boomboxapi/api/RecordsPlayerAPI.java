@@ -1,4 +1,4 @@
-package com.github.Shimado.boomboxapi;
+package com.github.Shimado.boomboxapi.api;
 
 import com.github.Shimado.boomboxapi.enums.ERecords;
 import org.bukkit.Location;

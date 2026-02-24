@@ -1,5 +1,6 @@
 package com.github.Shimado.boomboxapi;
 
+import com.github.Shimado.boomboxapi.factories.NbsConverterFactory;
 import com.github.Shimado.boomboxapi.factories.NbsPlayerFactory;
 import com.github.Shimado.boomboxapi.factories.RecordsPlayerFactory;
 import com.github.Shimado.boomboxapi.factories.SoundPlayerFactory;
@@ -7,9 +8,20 @@ import org.jetbrains.annotations.NotNull;
 
 public class BoomBoxAPI {
 
+    private static NbsConverterFactory nbsConverterFactory;
     private static NbsPlayerFactory nbsPlayerFactory;
     private static RecordsPlayerFactory recordsPlayerFactory;
     private static SoundPlayerFactory soundPlayerFactory;
+
+
+    public static void setNbsConverterFactory(@NotNull NbsConverterFactory f) {
+        nbsConverterFactory = f;
+    }
+
+    @NotNull
+    public static NbsConverterFactory getNbsConverterFactory() {
+        return nbsConverterFactory;
+    }
 
 
     public static void setNbsFactory(@NotNull NbsPlayerFactory f) {

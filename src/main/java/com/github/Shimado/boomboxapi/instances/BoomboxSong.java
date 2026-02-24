@@ -1,6 +1,5 @@
-package com.github.Shimado.boomboxapi.interfaces;
+package com.github.Shimado.boomboxapi.instances;
 
-import com.github.Shimado.boomboxapi.nbs.NbsSong;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

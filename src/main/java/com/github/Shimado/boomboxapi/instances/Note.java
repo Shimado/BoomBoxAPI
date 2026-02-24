@@ -1,4 +1,4 @@
-package com.github.Shimado.boomboxapi.nbs;
+package com.github.Shimado.boomboxapi.instances;
 
 import org.bukkit.Sound;
 import org.jetbrains.annotations.NotNull;
@@ -11,20 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Used for creating scheduled musical sequences or sound effects with precise timing control.
  */
 
-public class Note {
-
-    private int tick;
-    private Sound sound;
-    private float pitch;
-    private float volume;
-
-    public Note(int tick, @NotNull Sound sound, float pitch, float volume) {
-        this.tick = tick;
-        this.sound = sound;
-        this.pitch = pitch;
-        this.volume = volume;
-    }
-
+public interface Note {
 
     /**
      * Gets the game tick when this note should be played.
@@ -34,9 +21,7 @@ public class Note {
      * @return the tick value representing when to play this note
      */
 
-    public int getTick(){
-        return tick;
-    }
+    int getTick();
 
 
     /**
@@ -46,9 +31,7 @@ public class Note {
      */
 
     @NotNull
-    public Sound getSound(){
-        return sound;
-    }
+    Sound getSound();
 
 
     /**
@@ -57,9 +40,7 @@ public class Note {
      * @return the pitch value of this note (typically between 0.0f and 1.0f)
      */
 
-    public float getPitch(){
-        return pitch;
-    }
+    float getPitch();
 
 
     /**
@@ -69,9 +50,7 @@ public class Note {
      * @return the volume value of this note  (typically between 0.0f and 1.0f)
      */
 
-    public float getVolume(){
-        return volume;
-    }
+    float getVolume();
 
 
     /**
@@ -81,8 +60,6 @@ public class Note {
      * @param volume the new volume value (typically between 0.0f and 1.0f)
      */
 
-    public void setVolume(float volume){
-        this.volume = volume;
-    }
+    void setVolume(float volume);
 
 }

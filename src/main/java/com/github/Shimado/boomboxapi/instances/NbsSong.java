@@ -1,4 +1,4 @@
-package com.github.Shimado.boomboxapi.nbs;
+package com.github.Shimado.boomboxapi.instances;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -11,18 +11,7 @@ import java.util.List;
  * its structure, timing, and all musical notes organized by tick position.
  */
 
-public class NbsSong {
-
-    private short length;
-    private long speed;
-    private HashMap<Integer, List<Note>> notes;
-
-    public NbsSong(short length, long speed, @NotNull HashMap<Integer, List<Note>> notes){
-        this.length = length;
-        this.speed = speed;
-        this.notes = notes;
-    }
-
+public interface NbsSong {
 
     /**
      * Gets the total length of the song in ticks.
@@ -31,9 +20,7 @@ public class NbsSong {
      * @return the song length in ticks
      */
 
-    public short getLength() {
-        return length;
-    }
+    short getLength();
 
     /**
      * Gets the speed (tempo) of the song.
@@ -43,9 +30,7 @@ public class NbsSong {
      * @return the song speed in ticks per second
      */
 
-    public long getSpeed(){
-        return speed;
-    }
+    long getSpeed();
 
     /**
      * Gets all the notes in the song organized by tick position.
@@ -63,8 +48,6 @@ public class NbsSong {
      */
 
     @NotNull
-    public HashMap<Integer, List<Note>> getNotes(){
-        return notes;
-    }
+    HashMap<Integer, List<Note>> getNotes();
 
 }
