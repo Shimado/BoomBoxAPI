@@ -1,4 +1,4 @@
-package com.github.Shimado.nbs;
+package com.github.Shimado.boomboxapi.nbs;
 
 import org.jetbrains.annotations.NotNull;
 

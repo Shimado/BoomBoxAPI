@@ -1,8 +1,8 @@
-package com.github.Shimado;
+package com.github.Shimado.boomboxapi;
 
-import com.github.Shimado.factories.NbsPlayerFactory;
-import com.github.Shimado.factories.RecordsPlayerFactory;
-import com.github.Shimado.factories.SoundPlayerFactory;
+import com.github.Shimado.boomboxapi.factories.NbsPlayerFactory;
+import com.github.Shimado.boomboxapi.factories.RecordsPlayerFactory;
+import com.github.Shimado.boomboxapi.factories.SoundPlayerFactory;
 import org.jetbrains.annotations.NotNull;
 
 public class BoomBoxAPI {

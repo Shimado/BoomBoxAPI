@@ -1,6 +1,6 @@
-package com.github.Shimado.factories;
+package com.github.Shimado.boomboxapi.factories;
 
-import com.github.Shimado.RecordsPlayerAPI;
+import com.github.Shimado.boomboxapi.RecordsPlayerAPI;
 import org.jetbrains.annotations.NotNull;
 
 public interface RecordsPlayerFactory {

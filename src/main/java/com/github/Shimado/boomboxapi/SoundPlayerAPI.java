@@ -1,6 +1,6 @@
-package com.github.Shimado;
+package com.github.Shimado.boomboxapi;
 
-import com.github.Shimado.interfaces.BoomboxSong;
+import com.github.Shimado.boomboxapi.interfaces.BoomboxSong;
 import org.bukkit.Location;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;

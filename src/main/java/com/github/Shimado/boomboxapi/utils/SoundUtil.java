@@ -1,4 +1,4 @@
-package com.github.Shimado.utils;
+package com.github.Shimado.boomboxapi.utils;
 
 import org.bukkit.Sound;
 import org.jetbrains.annotations.NotNull;

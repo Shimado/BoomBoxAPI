@@ -1,6 +1,6 @@
-package com.github.Shimado.enums;
+package com.github.Shimado.boomboxapi.enums;
 
-import com.github.Shimado.utils.SoundUtil;
+import com.github.Shimado.boomboxapi.utils.SoundUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.jetbrains.annotations.NotNull;

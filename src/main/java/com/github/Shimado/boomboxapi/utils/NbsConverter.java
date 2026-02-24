@@ -1,7 +1,7 @@
-package com.github.Shimado.utils;
+package com.github.Shimado.boomboxapi.utils;
 
-import com.github.Shimado.nbs.NbsSong;
-import com.github.Shimado.nbs.Note;
+import com.github.Shimado.boomboxapi.nbs.NbsSong;
+import com.github.Shimado.boomboxapi.nbs.Note;
 import org.bukkit.Sound;
 import org.jetbrains.annotations.NotNull;
 
