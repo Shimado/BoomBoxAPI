@@ -6,15 +6,15 @@
 
     <groupId>com.github.Shimado</groupId>
     <artifactId>BoomBoxAPI</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
 
     <name>BoomBoxAPI</name>
     <description>API for minecraft plugin BoomBox</description>
     <url>https://github.com/Shimado/BoomBoxAPI.git</url>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

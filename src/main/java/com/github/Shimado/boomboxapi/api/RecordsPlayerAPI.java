@@ -22,7 +22,7 @@ public interface RecordsPlayerAPI {
      *                 .setSongsToList(recordsList)
      *                 .setBossBar(bossBar)
      *                 .play();
-     * **/
+     */
 
     int getFullTimeInSeconds();
 

@@ -24,7 +24,7 @@ public interface NbsPlayerAPI {
      *                 .setSongsToList(playlistList)
      *                 .setBossBar(bossBar)
      *                 .play()
-     * **/
+     */
 
     int getFullTimeInSeconds();
 

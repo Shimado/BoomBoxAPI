@@ -22,7 +22,7 @@ public interface SoundPlayerAPI {
      *                 .setSongsToList(soundList)
      *                 .setBossBar(bossBar)
      *                 .play();
-     * **/
+     */
 
     int getFullTimeInSeconds();
 

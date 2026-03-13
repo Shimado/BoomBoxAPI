@@ -37,12 +37,11 @@ public interface NbsSong {
      * The returned map structure allows efficient access to all notes that should
      * be played at any given tick during song playback.
      *
-     * <p>The map structure is:
+     * <p>The map structure is:</p>
      * <ul>
      *   <li>Key: Integer tick position (when notes should play)</li>
      *   <li>Value: List of Note objects to play at that tick</li>
      * </ul>
-     * </p>
      *
      * @return a map of tick positions to lists of notes, never null
      */

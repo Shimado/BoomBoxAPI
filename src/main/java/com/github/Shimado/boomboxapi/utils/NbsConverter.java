@@ -27,12 +27,10 @@ public interface NbsConverter {
      *   <li>Converts NBS instruments to Minecraft sounds</li>
      *   <li>Calculates proper pitch values from note numbers</li>
      * </ol>
-     * </p>
      *
      * <p><b>Note Conversion:</b>
      * NBS note numbers (0-87) are converted to Minecraft pitch values using the formula:
-     * <code>pitch = 2^((note - 33 - 12) / 12)</code>
-     * Notes are clamped to the range 0-24 for safety.</p>
+     * <code>pitch = 2^((note - 33 - 12) / 12)</code> Notes are clamped to the range 0-24 for safety.
      *
      * @param file the NBS file to parse, cannot be null
      * @param isLegacy whether to use legacy instrument mappings (pre-1.12)
