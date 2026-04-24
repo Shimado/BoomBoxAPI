@@ -125,6 +125,24 @@ public interface BoomboxSong {
 
 
     /**
+     * Returns the slots occupied by the song in the GUI.
+     *
+     * @return the slots occupied by the song in the GUI
+     */
+
+    List<Integer> getSlots();
+
+
+    /**
+     * Returns the page occupied by the song in the GUI.
+     *
+     * @return the page occupied by the song in the GUI
+     */
+
+    int getPage();
+
+
+    /**
      * Gets the permission required to access this song.
      *
      * @return the permission node
