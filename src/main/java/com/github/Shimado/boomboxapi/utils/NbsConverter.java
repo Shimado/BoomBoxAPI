@@ -2,6 +2,7 @@ package com.github.Shimado.boomboxapi.utils;
 
 import com.github.Shimado.boomboxapi.instances.NbsSong;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
@@ -34,11 +35,10 @@ public interface NbsConverter {
      *
      * @param file the NBS file to parse, cannot be null
      * @param isLegacy whether to use legacy instrument mappings (pre-1.12)
-     * @return a fully populated {@link NbsSong} object representing the parsed file
-     * @throws RuntimeException if there's any error during file parsing, with the original
-     *                         exception wrapped as the cause
+     * @return a fully populated {@link NbsSong} object representing the parsed file or else null
      */
 
+    @Nullable
     NbsSong parse(@NotNull File file, boolean isLegacy);
 
 
