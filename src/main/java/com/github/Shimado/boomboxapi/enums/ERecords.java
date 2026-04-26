@@ -61,7 +61,8 @@ public interface ERecords {
     Sound getSound();
 
 
-    static <T extends Enum<T> & ERecords> T findByMaterial(Class<T> enumClass, @Nullable Material material) {
+    @Nullable
+    static <T extends Enum<T> & ERecords> T findByMaterial(@NotNull Class<T> enumClass, @Nullable Material material) {
         if(material == null) return null;
         return Arrays.stream(enumClass.getEnumConstants())
                 .filter(e -> e.getMaterial().equals(material))
@@ -70,7 +71,8 @@ public interface ERecords {
     }
 
 
-    static <T extends Enum<T> & ERecords> T findByName(Class<T> enumClass, @Nullable String name) {
+    @Nullable
+    static <T extends Enum<T> & ERecords> T findByName(@NotNull Class<T> enumClass, @Nullable String name) {
         if(name == null) return null;
         return Arrays.stream(enumClass.getEnumConstants())
                 .filter(e -> e.toString().equals(name))
@@ -79,7 +81,8 @@ public interface ERecords {
     }
 
 
-    static <T extends Enum<T> & ERecords> T findByID(Class<T> enumClass, int id) {
+    @Nullable
+    static <T extends Enum<T> & ERecords> T findByID(@NotNull Class<T> enumClass, int id) {
         return Arrays.stream(enumClass.getEnumConstants())
                 .filter(e -> e.getID() == id)
                 .findFirst()
