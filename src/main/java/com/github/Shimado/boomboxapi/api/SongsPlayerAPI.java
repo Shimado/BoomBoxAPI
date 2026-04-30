@@ -55,7 +55,9 @@ public interface SongsPlayerAPI {
     @Nullable
     Player getPlayerToPlay();
 
-    SongsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay);
+    boolean isHeadphones();
+
+    SongsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay, boolean isHeadphones);
 
     SongsPlayerAPI removePlayerFromPlay();
 
