@@ -51,6 +51,8 @@ public interface RecordsPlayerAPI {
     @Nullable
     Player getPlayerToPlay();
 
+    boolean isHeadphones();
+
     RecordsPlayerAPI setPlayerToPlay(@Nullable Player playerToPlay, boolean isHeadphones);
 
     RecordsPlayerAPI setAcceleration(int acceleration);
